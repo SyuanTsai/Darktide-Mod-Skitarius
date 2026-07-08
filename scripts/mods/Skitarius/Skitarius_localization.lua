@@ -12,7 +12,7 @@ local localizations = {
     },
     mod_description = {
       en = "FROM THE MOMENT I UNDERSTOOD THE WEAKNESS OF MY FLESH, IT DISGUSTED ME.",
-      ["zh-tw"] = "當我看穿血肉的脆弱，那一刻，我的心靈便被機械的完美所召喚，對這腐朽之軀只剩厭憎。（繁體中文已由簡體漢化者維護，可能用詞差異和遊戲詞彙不同的不准確）",
+      ["zh-tw"] = "當我看穿血肉的脆弱，那一刻，我的心靈便被機械的完美所召喚，對這腐朽之軀只剩厭憎",
       ["zh-cn"] = "设置一个独属于你的连招，按键自动作出相应动作——————B站 独一无二的小真寻 汉化维护",
     },
     -- Debug
@@ -30,7 +30,7 @@ local localizations = {
     hud_element_tooltip = {
         en = "When enabled, a HUD icon will be displayed indicating mod and sequence status.",
       ["zh-cn"] = "启用后，将显示一个HUD图标，指示模块和序列状态。",
-      ["zh-tw"] = "啟用後，將顯示一個HUD圖標，訓示模塊和序列狀態。",
+      ["zh-tw"] = "啟用後，將顯示一個HUD圖標，用於指示模組和序列狀態。",
     },
     hud_element_type = {
       en = "Sequence Indicator Style",
@@ -45,7 +45,7 @@ local localizations = {
       ["zh-cn"] = string.format("颜色：当序列处于活动状态时，HUD元素将着色，当序列处于非活动状态时将为黑白.\n"..
         "图标：HUD元素将根据序列活动状态更改图标.\n"..
         "颜色+图标：HUD元素将根据序列活动状态更改图标和颜色.\n"),
-      ["zh-tw"] = string.format("顏色：當序列處於活動狀態時，HUD元素將著色，當序列處於非活動狀態時將為黑白.\n"..
+      ["zh-tw"] = ,
         "圖標：HUD元素將根據序列活動狀態更改圖標.\n"..
         "顏色+圖標：HUD元素將根據序列活動狀態更改圖標和顏色. \n"),
     },
@@ -78,7 +78,7 @@ local localizations = {
     mod_settings = {
       en = "Mod Settings",
       ["zh-cn"] = "MOD设置",
-      ["zh-tw"] = "MOD指設置",
+      ["zh-tw"] = "模組設定",
  
     },
     mod_enable_held = {
@@ -99,12 +99,12 @@ local localizations = {
     overload_protection = {
       en = "Overload Protection",
       ["zh-cn"] = "武器切换时保持键位绑定",
-      ["zh-tw"] = "武器切換時保持按鍵綁定",
+      ["zh-tw"] = "過載保護",
     },
     overload_protection_tooltip = {
       en = string.format("When enabled, the mod will prevent sequence input which would lead to death from Perils of the Warp. \nThis will NOT prevent deaths caused by manual player inputs."),
       ["zh-cn"] = "切换武器时防止键位绑定自动失效。启用后请注意远程与近战键位可能产生的冲突。",
-      ["zh-tw"] = "切換武器時防止按鍵綁定自動失效。 啟用後注意遠程與近戰鍵位可能產生的衝突",
+      ["zh-tw"] = "如果下一次攻擊引發過載自爆，序列將阻止繼續執行",
     },
     halt_on_interrupt = {
         en = "Halt On Manual Interrupt",
@@ -118,30 +118,35 @@ local localizations = {
     },
     halt_on_interrupt_types = {
         en = "Manual Interruptions"
+        ["zh-tw"] = "手動中斷類型",
     },
     halt_on_interrupt_types_tooltip = {
         en = "Determines which manual interruptions will halt active sequences when 'Halt On Manual Interrupt' is enabled."
+        ["zh-tw"] = "當啟用『中斷時停止』時，確定哪些手動中斷將停止活動序列。",
     },
     interruption_sprint = { 
         en = "Sprinting"
     },
     interruption_action_one = {
         en = "Attacking"
+        ["zh-tw"] = "攻擊中",
     },
     interruption_action_two = {
         en = "Blocking"
     },
     interruption_action_both = {
         en = "Attacking / Blocking"
+        ["zh-tw"] = "攻擊 / " .. Localize("loc_block"),
     },
     interruption_all = {
         en = "Sprinting / Attacking / Blocking"
+        ["zh-tw"] = Localize("loc_ingame_sprint") .. " / 攻擊 / " .. Localize("loc_block"),
     },
     -- Keybinds
     maintain_bind = {
       en = "Maintain Keybind Status on Weapon Swap",
       ["zh-cn"] = "武器切换时保持键位绑定",
-      ["zh-tw"] = "武器切換時保持按鍵狀態",
+      ["zh-tw"] = "切換武器時，保持按鍵綁定狀態",
     },
     maintain_bind_tooltip = {
       en = "Prevents keybinds from disabling themselves when switching weapons. Be aware of overlapping Ranged and Melee keybinds when using this feature.",
@@ -241,7 +246,7 @@ local localizations = {
     },
     halt = {
       en = "Halt Sequence",
-      ["zh-tw"] = "暂停序列",
+      ["zh-tw"] = "暫停序列",
       ["zh-cn"] = "中断序列",
     },
     melee_weapon_selection = {
@@ -286,23 +291,23 @@ local localizations = {
     },
     special_buff_stacks = {
 		en = "Heavy Buff Stacks (Special Attacks)",
-		["zh-tw"] = "重擊強化層數 （特殊攻擊）",
+		["zh-tw"] = "buff層數（特殊攻擊）",
 		["zh-cn"] = "蓄力buff层数 （特殊攻击）",
 	},
     always_special = {
       en = "Always Activate Special Actions",
       ["zh-cn"] = "始终激活武器特殊技能",
-      ["zh-tw"] = "始终激活武器特殊技能",
+      ["zh-tw"] = "始終啟動武器特殊攻擊",
     },
     always_special_tooltip = {
       en = "When enabled, the mod will always execute Special actions, regardless of weapon state.",
       ["zh-cn"] = "启用后，无论武器状态如何，mod都将始终执行特殊动作",
-      ["zh-tw"] = "啟用後，無論武器狀態如何，mod都將始終執行特殊動作",
+      ["zh-tw"] = "啟用後，無論武器狀態如何，mod都將啟動特殊攻擊",
     },
     heavy_buff_special_tooltip = {
       en = "When enabled, the Heavy Buff Modifier setting will only take effect while the current weapon's Special Action is active.",
       ["zh-cn"] = "启用后，「蓄力buff修正器」设置将仅在当前武器的特殊动作激活期间生效",
-      ["zh-tw"] = "啟用後，「蓄力buff修正器」設定將僅在當前武器的特殊動作啟動期間生效",
+      ["zh-tw"] = "啟用後，「蓄力buff修正器」設定將僅在當前武器的特殊攻擊啟動期間生效",
     },
     global_melee = {
       en = "GLOBAL",
@@ -312,12 +317,12 @@ local localizations = {
     force_heavy_when_special = {
       en = "Force Heavies When Special Active",
       ["zh-cn"] = "全局近战",
-      ["zh-tw"] = "全局近戰",
+      ["zh-tw"] = "特殊攻擊啟動時強制重擊",
     },
     force_heavy_when_special_tooltip = {
       en = "When enabled, Heavy attacks will be executed when the weapon's Special action is active, regardless of the standard sequence.",
       ["zh-cn"] = "启用后，无论标准顺序如何，当武器的特殊动作处于活动状态时，都将执行重型攻击",
-      ["zh-tw"] = "啟用後，無論標準順序如何，當武器的特殊動作處於活動狀態時，都將執行重型攻擊",
+      ["zh-tw"] = "啟用後，無論標準順序如何，當武器的特殊攻擊處於啟動狀態時，都將執行重型攻擊",
     },
     sequence_cycle_point = {
         en = "Cycle Point",
@@ -331,7 +336,7 @@ local localizations = {
     },
     no_repeat = {
       en = "Halt Sequence on Completion",
-      ["zh-tw"] = "步驟一",
+      ["zh-tw"] = "完成後停止",
       ["zh-cn"] = "步骤1",
     },
     sequence_step_one = {
@@ -480,7 +485,7 @@ local localizations = {
     always_charge_threshold_tooltip = {
       en = string.format("When enabled, this threshold will be used to determine when to auto-release charged attacks. \nThis will be overridden by the Weapon Charge Threshold setting if that setting is lower."),
       ["zh-cn"] = string.format("该阈值决定何时释放闪击\n 如果充能阈值设置过低，此设置将被覆盖"),
-      ["zh-tw"] = string.format("該閾值决定何時釋放閃擊\n 如果充能閾值設定過低（蓄力將自動釋放，無需手動操作），此設定將被覆蓋"),
+      ["zh-tw"] = string.format("該閾值用於調整遠程武器的充能強度,如果充能閾值過低,此設置將被覆蓋"),
     },
     ranged_weapon_selection = {
       en = "Weapon Selection",
